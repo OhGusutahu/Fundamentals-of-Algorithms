@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*  EXERCÍCIO 2 - SUBPROGRAMAÇÃO
+/*  EXERCÃCIO 2 - SUBPROGRAMAÃ‡ÃƒO
 Exemplo:        7 laranjas  --> 0.35*7=2.45
                 15 laranjas --> 0.3*15=4.50
 Entrada:        numero de laranjas a comprar
