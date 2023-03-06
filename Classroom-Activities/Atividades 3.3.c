@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*  EXERCÍCIO 3 - SUBPROGRAMAÇÃO
+/*  EXERCÃCIO 3 - SUBPROGRAMAÃ‡ÃƒO
 Exemplo:        7, 15, 13, 20  --> 20
                 34, 12, 18, 27 --> 34
 Entrada:        idade de quatro pessoas
