@@ -8,7 +8,7 @@ Exemplos:
 
 Entrada: senha
 Processamento: Comparar a senha inserida com o valor 1234
-Saída: "Acesso autorizado" ou "Acesso negado"
+SaÃ­da: "Acesso autorizado" ou "Acesso negado"
 */
 
 int main()
