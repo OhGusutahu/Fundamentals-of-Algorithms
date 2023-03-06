@@ -3,12 +3,12 @@
 
 /*
 Exemplos:
-    média: 6.0 --> conceito C
-    média: 9.5 --> conceito A
+    mÃ©dia: 6.0 --> conceito C
+    mÃ©dia: 9.5 --> conceito A
 
-Entrada: média final (nota)
-Processamento: analisar a média e entregar seu devido conceito
-Saída: conceito (A, B, C, D)
+Entrada: mÃ©dia final (nota)
+Processamento: analisar a mÃ©dia e entregar seu devido conceito
+SaÃ­da: conceito (A, B, C, D)
 */
 
 int main()
@@ -17,7 +17,7 @@ int main()
 
     float nota;
 
-    printf("Insira sua média final (0.0 a 10.0):");
+    printf("Insira sua mÃ©dia final (0.0 a 10.0):");
     scanf("%f", &nota);
 
     if(nota > 0 && nota < 5){
@@ -33,7 +33,7 @@ int main()
         printf("A");
     }
     else{
-        printf("Você não inseriu uma nota válida...");
+        printf("VocÃª nÃ£o inseriu uma nota vÃ¡lida...");
     }
 
     return 0;
