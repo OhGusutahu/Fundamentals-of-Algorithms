@@ -3,12 +3,12 @@
 
 /*
 Exemplos:
-    18 anos, 15 anos, 23 anos e 20 anos --> média de 19 anos
-    20 anos, 40 anos, 26 anos e 37 anos --> média de 30 anos
+    18 anos, 15 anos, 23 anos e 20 anos --> mÃ©dia de 19 anos
+    20 anos, 40 anos, 26 anos e 37 anos --> mÃ©dia de 30 anos
 
 Entrada: idade de quatro pessoas (idade1, idade2, idade3, idade4)
 Processamento: calcular: (idade1+idade2+idade3+idade4)/4
-Saída: média das idades
+SaÃ­da: mÃ©dia das idades
 */
 
 int main()
@@ -24,7 +24,7 @@ int main()
     scanf("%d", &idade4);
 
     media = (idade1+idade2+idade3+idade4)/4;
-    printf("A média das idades é igual a %d", media);
+    printf("A mÃ©dia das idades Ã© igual a %d", media);
 
     return 0;
 }
