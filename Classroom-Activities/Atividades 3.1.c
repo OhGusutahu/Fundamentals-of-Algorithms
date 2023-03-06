@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*  EXERCÍCIO 1 - SUBPROGRAMAÇÃO
+/*  EXERCÃCIO 1 - SUBPROGRAMAÃ‡ÃƒO
 Exemplo:        num = 10 --> dez
                 num = 7  --> sete
 Entrada:        numero entre 0 e 10
