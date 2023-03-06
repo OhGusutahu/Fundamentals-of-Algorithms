@@ -1,0 +1,259 @@
+/* ~ Exercício 1 ~
+Exemplos: 18, 21, 24, 22, 25, 28, 31, 27, 30, 26 --> média: 25,2 graus; mais alta: 31 graus
+          21, 25, 26, 24, 27, 28, 24, 23, 20, 24 --> média: 25,2 graus; mais alta: 28 graus
+Entrada: temperaturas médias diárias de dez dias
+Processamento: ler as temperaturas e calcular a média delas
+Saída: temperatura média dos dez dias e a temperatura mais alta
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    int temp, tempNum, mediaTemp;
+
+    mediaTemp = 0;
+    tempNum = 0;
+    for(int i; i<10; i++) {
+        printf("Insira a temperatura do dia %d: ", i+1);
+        scanf("%d", &temp);
+        mediaTemp = mediaTemp + temp;
+        if(temp>tempNum) {
+            tempNum = temp;
+        }
+    }
+    mediaTemp = mediaTemp/10;
+
+    printf("A media das temperaturas eh: %d.\n", mediaTemp);
+    printf("A maior tempertura eh: %d.", tempNum);
+
+    return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~ Exercício 2 ~
+Exemplos: N = 5 --> H = 1 + 1/2 + 1/3 + 1/4 + 1/5 = 2,283333
+          N = 8 --> H = 1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + 1/7 + 1/8 = 2,717857
+Entrada: valor de N
+Processamento: ler N e calcular a equação H
+Saída: valor de H
+*/
+
+#include <stdio.h>
+#include <assert.h>
+
+float equationH (int a) {
+    float H;
+
+    H = 0;
+    for(int i=1; i<=a; i++) {
+        H = H + (float)1/i;
+    }
+    return H;
+}
+
+void test() {
+    assert(equationH(5)==2.283333);
+    printf("test successful");
+}
+
+int main() {
+
+    test();
+
+    int valorN;
+
+    printf("Insira o valor de N: ");
+    scanf("%d", &valorN);
+
+    printf("O valor de H eh: %f.", equationH(valorN));
+
+    return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~ Exercício 3 ~
+Exemplos: 9, 10, 5, 4, 1, 20, 1 --> 3 números maiores que 8
+          20, 21, 6, 83, 5, 1, 31 --> 4 números maiores que 8
+Entrada: sete números
+Processamento: ler os números e analisar quais são maiores que 8
+Saída: quantidade de números maiores que 8
+*/
+
+#include <stdio.h>
+
+int higher8 (int a) {
+    int b;
+    for(int i = 0; i < 7; i++){
+        printf("Digite o valor do %d numero:", i+1);
+        scanf("%d", &a);
+
+        if(a > 8){
+            b++;
+        }
+    }
+    return b;
+}
+
+int main() {
+
+    int numero, numMaior8;
+
+    numMaior8 = higher8(numero);
+
+    printf("Numeros maiores que 8: %d", numMaior8);
+
+    return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~ Exercício 4 ~
+Exemplos: pessoa 1: 60 anos, 1,70m, 80 quilos; pessoa 2: 18 anos, 1,60m, 65 quilos; pessoa 3: 40 anos, 1,65m, 80 quilos; pessoa 4: 10 anos, 1,35m, 38 quilos -->
+                    -->  1 pessoa acima dos 50 anos; 1,48m de media de altura; 25% de pessoas com peso inferior a 40 quilos
+Entrada: altura, idade e peso de quatro pessoas
+Processamento: ler e calcular a quantidade de pessoas acima de 50 anos, a media de altura de pessoas entre 10 e 20 anos e a porcentagem de pessoas com peso inferior a 40 quilos
+Saída: quantidade de pessoas acima de 50 anos, media de altura de pessoas entre 10 e 20 anos e porcentagem de pessoas com peso inferior a 40 quilos
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    int idade;
+    float altura, peso;
+    int acima50, entre10e20;
+    float media10e20, porcent;
+
+    acima50=0;
+    entre10e20=0;
+    media10e20=0;
+    porcent=0;
+    for(int i; i<4; i++) {
+        printf("Insira a idade da pessoa %d: ", i+1);
+        scanf("%d", &idade);
+        if(idade > 50) {
+            acima50++;
+        }
+
+        printf("Insira a altura da pessoa %d: ", i+1);
+        scanf("%f", &altura);
+        if(idade>=10 && idade <=20) {
+                entre10e20++;
+            media10e20=media10e20+altura;
+        }
+        printf("Insira o peso da pessoa %d: ", i+1);
+        scanf("%f", &peso);
+        if(peso<40) {
+            porcent++;
+        }
+    }
+
+    printf("A quantidade de pessoas com idade acima de 50 eh de: %d\n", acima50);
+
+    media10e20= (float)media10e20/entre10e20;
+    printf("A media de altura de pessoas entre 10 e 20 anos eh de: %.2f\n", media10e20);
+
+    porcent=(porcent/4)*100;
+    printf("A porcentagem de pessoas com peso inferior a 40kg eh de: %.2f %%\n", porcent);
+
+    return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~ Exercício 5 ~
+Exemplos: Gustavo --> Gust
+          Flavio --> Flav
+Entrada: nome
+Processamento: ler nome e analisar as 4 primeiras letras
+Saída: 4 primeiras letras do nome
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    char nome[20], nome4[20];
+
+    printf("Insira o nome: ");
+    fgets(nome, 20, stdin);
+
+    for(int i; i<4; i++) {
+        nome4[i] = nome[i];
+    }
+    printf("%s", nome4);
+
+    return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~ Exercício 6 ~
+Exemplos: Gustavo --> ovatsuG
+          Flavio --> oivalF
+Entrada: palavra
+Processamento: ler e inverter palavra
+Saída: palavra invertida
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    char Word[20], droW[20];
+    int tam=0;
+
+    printf("Insira uma palavra: ");
+    fgets(Word,20,stdin);
+
+    tam = strlen(Word);
+    Word[tam-1] = '\0';
+    tam = strlen(Word);
+
+    for(int i; i<tam; i++) {
+        droW[i] = Word[tam - i - 1];
+    }
+
+    printf("A palavra eh: %s\nInvertida eh: %s", Word, droW);
+
+    return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~ Exercício 7 ~
+Exemplos: paralelepipedo; p, e --> earaleleeieedo
+          arara; a, o --> ororo
+Entrada: palavra e as duas letras
+Processamento: ler a palavra e as letras e trocar as letras na palavra
+Saída: palavra com as letras trocadas
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    char palavra[20], L1, L2;
+    int tam = 0;
+
+    printf("Insira uma palavra: ");
+    fgets(palavra,20,stdin);
+    printf("Insira a letra para ser trocada: ");
+    scanf(" %c", &L1);
+    printf("Insira a letra para trocar: ");
+    scanf(" %c", &L2);
+
+    tam = strlen(palavra);
+    for(int i; i<tam; i++) {
+        if(palavra[i] == L1) {
+           palavra[i] = L2;
+        }
+    }
+
+    printf("A palavra com as letras trocadas: %s", palavra);
+
+    return 0;
+}
